@@ -4,11 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    ProductsPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
