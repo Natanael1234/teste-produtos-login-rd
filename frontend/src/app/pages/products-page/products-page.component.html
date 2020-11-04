@@ -1,1 +1,15 @@
-<p>products-page works!</p>
+<div *ngIf="products" class="products">
+  <div *ngFor="let product of products" class="product">
+    <div class="text">
+      <div class="name">
+        {{ product.name }}
+      </div>
+      <div class="tags">
+        {{ product.tags }}
+      </div>
+    </div>
+    <div class="price">${{ product.price }}</div>
+    <img [src]="product.image" class="image" />
+    <button type="button" class="btn btn-primary button" (click)="addToCart(product)">Add to cart</button>
+  </div>
+</div>
