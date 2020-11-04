@@ -4,14 +4,16 @@ export class Product {
   image: string;
   tags: string;
   price: number;
-  constructor(dados: any) {
+  cartQuantity: number;
+  constructor(dados: any | Product) {
     this.build(dados);
   }
-  build(dados: any) {
+  build(dados: any | Product) {
     this.id = dados.id;
     this.name = dados.name;
     this.image = dados.image;
     this.tags = dados.tags;
     this.price = dados.price;
+    this.cartQuantity = dados.cartQuantity || 0;
   }
 }
