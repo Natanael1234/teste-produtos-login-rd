@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
-import { CartService } from 'src/app/services/chart/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -52,14 +52,14 @@ export class ProductsPageComponent implements OnInit {
     // para cada produto na lista
     for (let product of this.products) {
       // procura o produto correspondente no carrinho
-      let chartProduct = items.find((charProduct: Product) => product.id == charProduct.id);
+      let cartProduct = items.find((caertProduct: Product) => product.id == caertProduct.id);
       // se encontrou o produto no carrinho copia a quantidade para o produto na lista
-      if (chartProduct) product.cartQuantity = chartProduct.cartQuantity;
+      if (cartProduct) product.cartQuantity = cartProduct.cartQuantity;
       // se não encontrou o produto no carrinho zera a quantidade do produto na lista
       else product.cartQuantity = 0;
     }
     // atualiza a quantidade total de produtos no carrinho.
-    let quantities: number[] = items.map((chartProduct: Product) => chartProduct.cartQuantity);
+    let quantities: number[] = items.map((cartProduct: Product) => cartProduct.cartQuantity);
     this.cartQuantity = quantities.length ? quantities.reduce((total: number, quantity: number) => total + quantity) : 0;
 
   }
