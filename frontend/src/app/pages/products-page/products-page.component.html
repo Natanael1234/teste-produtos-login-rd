@@ -1,15 +1,22 @@
 <!-- header -->
 <div class="header">
-  <div class="title">Products</div>
-  <div class="cart">
-    <button type="button" class="btn btn-light" (click)="navigateToCart()">Cart ({{ cartQuantity }})</button>
+  <div class="header-content">
+    <div class="title">Products</div>
+    <button type="button" class="btn btn-light cart" (click)="navigateToCart()">
+      <img class="icon" src="../../../assets/images/app/cart-icon.svg" />
+      {{ cartQuantity }}
+    </button>
+
   </div>
 </div>
 
 <!-- grid -->
 <div *ngIf="products" class="products">
   <!-- grid item -->
-  <div *ngFor="let product of products" class="product">
+  <div
+    *ngFor="let product of products"
+    [ngClass]="['product', product.cartQuantity ? 'in-cart' : '']"
+  >
     <div class="text">
       <div class="name">
         {{ product.name }}
@@ -22,8 +29,15 @@
     <img [src]="product.image" class="image" />
     <button
       type="button"
-      [ngClass]="['btn', product.cartQuantity ? 'btn-danger' : 'btn-primary', 'button']"
-      (click)="!product.cartQuantity ? addToCart(product) : removeFromCart(product)">
+      [ngClass]="[
+        'btn',
+        product.cartQuantity ? 'btn-danger' : 'btn-primary',
+        'button'
+      ]"
+      (click)="
+        !product.cartQuantity ? addToCart(product) : removeFromCart(product)
+      "
+    >
       {{ !product.cartQuantity ? "Add to cart" : "Remove from cart" }}
     </button>
   </div>
