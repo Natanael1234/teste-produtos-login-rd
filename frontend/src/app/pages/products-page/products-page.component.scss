@@ -62,13 +62,13 @@ $card-height: 544px;
   @media (min-width: $breakpoint-ul) {
     grid-template-columns: auto auto auto auto;
   }
+  margin-bottom: 144px;
   // grid-item
   .product {
     justify-self: center;
     width: $card-width;
     height: $card-height;
     position: relative;
-    margin-bottom: 144px;
     .text {
       position: relative;
       .name {
