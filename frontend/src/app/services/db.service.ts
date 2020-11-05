@@ -6,6 +6,19 @@ import { Product } from '../models/product.model';
 })
 export class DbService {
 
+
+  saveLogin(userData: { email: string, name: string }) {
+    localStorage.setItem('login', JSON.stringify(userData));
+  }
+
+  getLogin(): { email: string, name: string } {
+    return JSON.parse(localStorage.getItem('login'));
+  }
+
+  removeLogin() {
+    localStorage.removeItem('login');
+  }
+
   getCart(): Product[] {
     let str = localStorage.getItem('items-carrinho');
     if (str) {
@@ -33,10 +46,10 @@ export class DbService {
     this.getCart().length;
   }
 
-  getCartProductQuantity () {
+  getCartProductQuantity() {
     let cart = this.getCart();
     let quantity = 0;
-    for(let product of cart) {
+    for (let product of cart) {
       quantity += product.cartQuantity;
     }
     return quantity;
