@@ -27,7 +27,7 @@ export class ProductService {
       }));
       this.products.push(new Product({
         id: id++,
-        name: 'Daysgone',
+        name: 'Days Gone',
         tags: 'PS4',
         price: 127,
         image: 'assets/images/products/days-gone.png'
