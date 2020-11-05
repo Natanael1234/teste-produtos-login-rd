@@ -1,40 +1,40 @@
 <div class="page-container">
-
+  <!-- topo -->
   <div class="top">
+    <!-- cabeçalho -->
     <div class="header">
+      <!-- logo -->
       <div class="logo">
-        <img
-          class="logo"
-          src="../assets/images/app/logo.png"
-        />
+        <img class="logo" src="../assets/images/app/logo.png" />
       </div>
-      <div class="text">
-        <div class="nome-pagina">
-          {{currentRoute}}
-        </div>
-        <div class="nome-usuario">
-          João
-        </div>
+      <!-- nome da página -->
+      <div class="nome-pagina">
+        {{ currentRoute }}
       </div>
-      <button type="button" class="btn btn-primary login">Login</button>
+      <div class="spacer"></div>
+      <!-- nome do usuário -->
+      <div class="nome-usuario">João</div>
+      <!-- botão login/logoff -->
+      <div class="login">
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
     </div>
+    <!-- banner -->
     <div class="banner"></div>
   </div>
-
+  <!-- conteúto/páginas -->
   <div class="content">
     <router-outlet></router-outlet>
   </div>
+  <!-- rodapé -->
   <div class="footer">
+    <!-- logo -->
     <div class="logo-container">
-      <img
-        class="logo"
-        src="../assets/images/app/logo.png"
-      />
+      <img class="logo" src="../assets/images/app/logo.png" />
     </div>
-
+    <!-- nome app -->
     <div class="text">
       <div>Teste front-end 2019 - RCA Digital</div>
     </div>
   </div>
 </div>
-

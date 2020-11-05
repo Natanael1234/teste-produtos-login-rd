@@ -11,80 +11,125 @@
 */
 
 .page-container {
-
-
+  // topo da página
   .top {
-    width: calc(100% - 322px);
-    margin: 22px 185px 46px 137px;
+    display: grid;
+    justify-content: center;
+    width: 100%;
     /** altura total do topo = 22px + 101px (cabeçacalho) + 911 (banner) + 46px = 1080px */
+    // cabeçalho
     .header {
+      color: $primary-color;
       height: 101px;
+      font-weight: bold;
+      width: 100%;
+      margin-right: 48px;
+      margin-top: 22px;
+      margin-bottom: 46px;
+
       display: grid;
       align-items: center;
-      grid-template-columns: 244px auto 118px;
-      font-weight: bold;
-      .logo {
-        height: 101px;
-        align-self: center;
+      width: 417px;
+      // width: 100%;
+      grid-template-columns: auto 48px 118px;
+      .nome-pagina,
+      .nome-usuario {
+        display: none;
       }
-      .text {
-        font-size: 22px;
-        color: $primary-color;
-        display: grid;
-        grid-template-columns: auto auto;
-        .nome-pagina {
-          font-size: 22px;
-          font-weight: bold;
-        }
+      @media (min-width: $breakpoint-lg) {
+        width: 786px;
+      }
+      @media (min-width: $breakpoint-xl) {
+        grid-template-columns: 244px auto 48px auto 118px;
+        .nome-pagina,
         .nome-usuario {
-          font-size: 18px;
-          font-weight: normal;
-          justify-self: end;
-          align-self: center;
-          margin-right: 74px;
+          display: initial;
         }
+        width: 1155px;
       }
+      @media (min-width: $breakpoint-ul) {
+        width: 1524px;
+      }
+      // logo da empresa
+      .logo {
+        // background-color: rebeccapurple;
+        height: 101px;
+      }
+      // nome da página
+      .nome-pagina {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      // nome do usuário
+      .nome-usuario {
+        font-size: 18px;
+        font-weight: normal;
+        justify-self: end;
+
+        margin-right: 74px;
+        justify-content: end;
+      }
+      // login
       .login,
       .logoff {
-        font-size: 22px;
-        width: 118px;
-        height: 60px;
         justify-self: end;
+        justify-content: end;
+        button {
+          font-size: 22px;
+          width: 118px;
+          height: 60px;
+        }
       }
     }
   }
 
+  // conteúdo/páginas
   .content {
     width: 100%;
   }
 
+  // rodapé
   .footer {
     // autura total do rodapé = 165px
     width: 100%;
     height: 165px;
     background-color: $secondary-color;
-
-
     display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-
+    grid-template-columns: auto;
+    // logo da empresa
     .logo-container {
-      padding-left: 135px;
+      display: grid;
       .logo {
+        justify-self: center;
         width: 244px;
         height: 101px;
       }
     }
-
+    // nome da aplicação
     .text {
       font-size: 23px;
       color: $primary-color;
       white-space: nowrap;
       font-weight: lighter;
-      text-align: left;
-      text-align: right;
-      padding-right: 183px;
+      text-align: center;
+      display: none;
     }
+
+    // se tela grande
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: auto auto;
+      // logo da empresa
+      .logo-container {
+        display: initial;
+        padding-left: 135px;
+      }
+      // logo da empresa
+      .text {
+        display: initial;
+        text-align: right;
+        padding-right: 183px;
+      }
+    }
+    align-items: center;
   }
 }
