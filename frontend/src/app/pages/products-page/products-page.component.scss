@@ -51,6 +51,7 @@ $card-height: 544px;
   color: $gray-dark;
   display: grid;
   justify-content: center;
+  grid-gap: 25px;
   // número de colunas muda conforme os breakpoints responsivos
   grid-template-columns: auto;
   @media (min-width: $breakpoint-lg) {

@@ -37,7 +37,7 @@
         display: none;
       }
       @media (min-width: $breakpoint-lg) {
-        width: 786px;
+        width: 811px;
       }
       @media (min-width: $breakpoint-xl) {
         grid-template-columns: 244px auto 48px auto 118px;
@@ -45,10 +45,10 @@
         .nome-usuario {
           display: initial;
         }
-        width: 1155px;
+        width: 1205px;
       }
       @media (min-width: $breakpoint-ul) {
-        width: 1524px;
+        width: 1599px;
       }
       // logo da empresa
       .logo {
