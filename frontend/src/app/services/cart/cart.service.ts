@@ -25,12 +25,13 @@ export class CartService {
   }
 
   /** Adiciona uma quandidade de um produto ao carrinho. */
-  async addCartItem(productId: number, quantity: number): Promise<{ success: boolean, cartQuantity: number }> {
+  async addCartItem(productId: number, quantity: number): Promise<{ success: boolean, cartQuantity: number }> {    
     // busca o produto no carrinho
-    let cartItem = this.db.getCartItem(productId);
+    let cartItem = this.db.getCartItem(productId);    
     // se o produto já está no carrinho
     if (cartItem) {
       cartItem.cartQuantity = Math.max(0, cartItem.cartQuantity + quantity);
+      this.db.saveCartItem(cartItem);
       let cartQuantity = this.db.getCartProductQuantity();
       return { success: true, cartQuantity };
     }
