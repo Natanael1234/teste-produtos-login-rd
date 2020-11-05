@@ -10,6 +10,42 @@
  footer = h 165px
 */
 
+// formulário do menu de login
+.login-popover {
+  $menu-width: 352px;
+  $menu-inner-width: 292px;
+  min-width: $menu-width;
+  .popover-body {
+    width: $menu-inner-width;
+    padding-top: 34px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 31px;
+  }
+  .login-form-wrapper {
+    width: $menu-inner-width;
+    .login-form {
+      width: 100%;
+      // campo email
+      input {
+        min-width: $menu-inner-width;
+        // width: 293px;
+        height: 60px;
+        &::placeholder {
+          color: $primary-color;
+          font-size: 22px;
+          font-weight: lighter;
+        }
+      }
+      button {
+        min-width: $menu-inner-width;
+        font-size: 18px;
+        font-weight: lighter;
+      }
+    }
+  }
+}
+
 .page-container {
   // topo da página
   .top {
