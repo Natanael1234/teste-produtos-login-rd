@@ -4,7 +4,8 @@ export class Product {
   image: string;
   tags: string;
   price: number;
-  cartQuantity: number;
+  _cartQuantity: number;
+
   constructor(dados: any | Product) {
     this.build(dados);
   }
@@ -14,6 +15,15 @@ export class Product {
     this.image = dados.image;
     this.tags = dados.tags;
     this.price = dados.price;
-    this.cartQuantity = dados.cartQuantity || 0;
+    this.cartQuantity = dados._cartQuantity || 0;
+  }
+  set cartQuantity(quantity) {
+    this._cartQuantity = quantity;
+  }
+  get cartQuantity() {
+    return this._cartQuantity;
+  }
+  get totalPrice() {
+    return this._cartQuantity * this.price;
   }
 }
