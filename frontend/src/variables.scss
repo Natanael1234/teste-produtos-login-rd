@@ -1,0 +1,21 @@
+$gray-dark: #333333;
+$primary-color: #367ba4;
+$secondary-color: #272727;
+$card-width: 369px;
+$card-height: 544px;
+
+// us 320px /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+$breakpoint-us: 320px;
+// xs 480px /* smartphones, Android phones, landscape iPhone */
+$breakpoint-xs: 480px;
+// sm 600px  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) *
+$breakpoint-sm: 600px;
+// mg 801px /* tablet, landscape iPad, lo-res laptops ands desktops */
+$breakpoint-md: 801px;
+// lg 1025px /* big landscape tablets, laptops, and desktops */
+$breakpoint-lg: 1025px;
+// xl 1281px /* hi-res laptops and desktops */
+$breakpoint-xl: 1281px;
+// ul 1560px /* hi-res laptops and desktops */
+$breakpoint-ul: 1560px;
+
