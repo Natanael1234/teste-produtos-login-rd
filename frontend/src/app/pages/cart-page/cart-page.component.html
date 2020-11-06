@@ -1,39 +1,20 @@
-<!-- header -->
-<!-- cabeçalho -->
-<div class="header">
-  <div class="header-content">
-    <div class="title">Cart</div>
-  </div>
-</div>
+<app-page-header
+  class="page-header"
+  pageName="Cart"
+  [showCart]="false">
+</app-page-header>
+
 <!-- carrinho -->
 <div class="cart">
   <!-- item de produto -->
-  <div class="cart-item" *ngFor="let item of cart">
-    <!-- imagem do produto -->
-    <img class="image" [src]="item.image" />
-    <div class="dados">
-      <div class="text">
-        <!-- nome do produto -->
-        <div class="name">{{ item.name }}</div>
-        <!-- tags do produto -->
-        <div class="tags">{{ item.tags }}</div>
-      </div>
-      <div class="quantidade-preco">
-        <div class="grupo-quantidade">
-          <!-- botão remover -->
-          <button class="remove btn btn-light btn-outline-secondary" (click)="addProduct(item, -1)">-</button>
-          <!-- // quantidade -->
-          <div class="quantidade">{{ item.cartQuantity }}</div>
-          <!-- botão adicionar -->
-          <button  class="add btn btn-light btn-outline-secondary"(click)="addProduct(item, 1)">+</button>  
-        </div>
-        <!-- total -->
-        <div class="total">$ {{ item.totalPrice }}</div>
-      </div>
-    </div>
-  </div>
-  <!-- preço toral -->
-  <div class="total-price">
-    <div class="total">Total</div>
-    <div class="price">$ {{ totalPrice }}</div>    
+  <app-cart-item
+    class="cart-item"
+    *ngFor="let item of cart"
+    [item]="item"
+    (onAddToChart)="addProduct($event.item, $event.quantity)">
+  </app-cart-item>
+  <!-- preço total -->
+  <app-cart-total
+    class="total-price"
+    [totalPrice]="totalPrice"></app-cart-total>
 </div>

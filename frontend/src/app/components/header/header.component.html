@@ -1,0 +1,40 @@
+<!-- cabeçalho -->
+<div class="header">
+  <!-- logo -->
+  <div class="logo" (click)="navigateToHome()">
+    <img src="../assets/images/app/logo.png" />
+  </div>
+  <!-- nome da página -->
+  <div class="page-name">{{ pageName }}</div>
+  <!-- nome do usuário -->
+  <div class="user-name">{{ loginData?.name ? "Welcome " + loginData.name : "" }}</div>
+  <!-- botão login/logoff -->
+  <div class="login">
+    <!-- botão logout -->
+    <button
+      *ngIf="loginData"
+      type="button"
+      [ngClass]="['btn btn-danger']"
+      (click)="logout()">
+      Logout
+    </button>
+    <!-- botão login -->
+    <button
+      *ngIf="!loginData"
+      type="button"
+      [ngClass]="['btn btn-primary']"
+      [autoClose]="'outside'"
+      [ngbPopover]="popContent"
+      popoverClass="login-popover"
+      placement="bottom-right"
+      [popoverTitle]="popHeader"
+    >
+      Login
+    </button>
+    <!-- menu de login -->
+    <ng-template #popHeader></ng-template>
+    <ng-template #popContent class="login-template">
+      <login-form (onSubmit)="login($event)"></login-form>
+    </ng-template>
+  </div>
+</div>

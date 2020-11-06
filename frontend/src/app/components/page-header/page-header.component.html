@@ -1,0 +1,9 @@
+<div class="header">
+  <div class="header-content">
+    <div class="title">{{pageName}}</div>
+    <button type="button" *ngIf="showCart" class="btn btn-light cart" (click)="navigateToCart()">
+      <img class="icon" src="../../../assets/images/app/cart-icon.svg" />
+      {{ cartQuantity }}
+    </button>
+  </div>
+</div>

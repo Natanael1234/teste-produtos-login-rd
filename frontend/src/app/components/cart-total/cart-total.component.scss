@@ -1,0 +1,20 @@
+@import "../../../variables.scss";
+
+.total-price {
+  width: 100%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto // preço
+    99px; // total
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: auto // total
+      217px; // preço
+  }
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+  .total {
+  }
+  .price {
+  }
+}

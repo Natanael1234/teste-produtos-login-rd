@@ -1,0 +1,40 @@
+@import "../../../variables.scss";
+
+// rodapé
+.footer {
+  position: relative !important;
+  display: grid;
+  grid-template-columns: auto;
+  // logo da empresa
+  .logo-container {
+    display: grid;
+    .logo {
+      justify-self: center;
+      height: 101px;
+    }
+  }
+  // nome da aplicação
+  .text {
+    font-size: 23px;
+    color: $primary-color;
+    white-space: nowrap;
+    font-weight: lighter;
+    text-align: center;
+    display: none;
+  }
+
+  // se tela grande
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: auto auto;
+    // logo da empresa
+    .logo-container {
+      display: initial;
+    }
+    // logo da empresa
+    .text {
+      display: initial;
+      text-align: right;
+    }
+  }
+  align-items: center;
+}

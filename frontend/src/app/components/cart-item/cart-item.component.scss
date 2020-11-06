@@ -1,0 +1,69 @@
+@import "../../../variables.scss";
+
+.cart-item {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  grid-template-columns: 127px auto;
+
+  .image {
+    width: 127px;
+    height: 146px;
+  }
+  .dados {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .text {
+      height: 100%;
+      margin-left: 31px;
+      // align-items: ;
+      grid-template-columns: 1fr;
+      .name {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .tags {
+        font-size: 14px;
+        font-weight: bolder;
+      }
+    }
+    .quantidade-preco {
+      margin-left: 31px;
+      display: grid;
+      align-items: center;
+      justify-content: end;
+      grid-template-columns: 1fr;
+      @media (min-width: $breakpoint-lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grupo-quantidade {
+        display: grid;
+        justify-self: end;
+        align-items: center;
+        grid-template-columns: 38px 52px 38px;
+        .remove,
+        .add {
+          width: 38px;
+          height: 39px;
+          // font-size: 30px;
+          text-align: center;
+        }
+        .quantidade {
+          text-align: center;
+          width: 52px;
+          font-size: 30px;
+        }
+      }
+      .total {
+        text-align: right;
+        font-size: 30px;
+      }
+    }
+  }
+}

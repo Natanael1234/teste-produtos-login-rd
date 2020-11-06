@@ -1,33 +1,7 @@
 @import "../../../variables.scss";
 
-// cabeçalho
-.header {
-  display: grid;
-  justify-content: center;
-  margin-bottom: 70px;
-  color: $gray-dark;
-  .header-content {
-    display: grid;
-    grid-template-columns: auto;
-    width: $card-width;
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: auto auto;
-      width: calc(#{$card-width} * 2);
-    }
-    @media (min-width: $breakpoint-xl) {
-      width: calc(#{$card-width} * 3);
-    }
-    @media (min-width: $breakpoint-ul) {
-      width: calc(#{$card-width} * 4);
-    }
-    .title {
-      font-size: 69px;
-      font-weight: lighter;
-      align-self: center;
-    }
-  }
-
-  margin-bottom: 144px;
+.page-header {
+  width: 100%;
 }
 // carrinho
 .cart {
@@ -41,113 +15,7 @@
   // número de colunas muda conforme os breakpoints responsivos
   .cart-item,
   .total-price {
-    width: 369px;
-    width: calc(100% - 64px);
-  }
-  @media (min-width: $breakpoint-lg) {
-    .cart-item,
-    .total-price {
-      width: 770px;
-    }
-  }
-  @media (min-width: $breakpoint-xl) {
-    .cart-item,
-    .total-price {
-      width: 1171px;
-    }
-  }
-  @media (min-width: $breakpoint-ul) {
-    .cart-item,
-    .total-price {
-      width: 1572px;
-    }
+    width: 100%;
   }
 
-  // item no carrinho
-  .cart-item {
-    display: grid;
-    align-items: center;
-
-    grid-template-columns: 127px auto;
-
-    .image {
-      width: 127px;
-      height: 146px;
-    }
-    .dados {
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: auto auto;
-      align-items: center;
-      @media (min-width: $breakpoint-lg) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-      }
-      .text {
-        height: 100%;
-        margin-left: 31px;
-        // align-items: ;
-        grid-template-columns: 1fr;
-        .name {
-          font-size: 30px;
-          margin-bottom: 10px;
-        }
-        .tags {
-          font-size: 14px;
-          font-weight: bolder;
-        }        
-      }
-      .quantidade-preco {
-        margin-left: 31px;
-        display: grid;
-        align-items: center;
-        justify-content: end;
-        grid-template-columns: 1fr;
-        @media (min-width: $breakpoint-lg) {
-          grid-template-columns: 1fr 1fr;
-        }
-        .grupo-quantidade {
-          display: grid;
-          justify-self: end;;
-          align-items: center;
-          grid-template-columns: 38px 52px 38px;
-          .remove,
-          .add {
-            width: 38px;
-            height: 39px;
-            // font-size: 30px;
-            text-align: center;
-          }
-          .quantidade {
-            text-align: center;
-            width: 52px;
-            font-size: 30px;
-          }
-        }
-        .total {
-          text-align: right;
-          font-size: 30px;
-        }
-      }
-    }
-  }
-  // preço total
-  .total-price {
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto // preço
-      99px; // total
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: auto // total
-        217px; // preço
-    }
-    text-align: right;
-    font-size: 30px;
-    font-weight: bold;
-    .total {
-    }
-    .price {
-      
-    }
-  }
 }

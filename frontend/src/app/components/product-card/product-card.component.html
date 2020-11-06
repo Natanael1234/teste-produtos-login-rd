@@ -1,0 +1,15 @@
+<div [ngClass]="['product', product?.cartQuantity ? 'in-cart' : '']">
+  <div class="text">
+    <div class="name">{{ product?.name }}</div>
+    <div class="tags">{{ product?.tags }}</div>
+  </div>
+  <div class="price">${{ product?.price }}</div>
+  <img [src]="product?.image||false" class="image" />
+  <button
+    type="button"
+    [disabled]="!product"
+    [ngClass]="['btn', product?.cartQuantity ? 'btn-danger' : 'btn-primary', 'button']"
+    (click)="!product?.cartQuantity ? fireOnAddToChartEvent(product) : fireOnRemoveFromChartEvent(product)">
+    {{ !product.cartQuantity ? "Add to cart" : "Remove from cart" }}
+  </button>
+</div>

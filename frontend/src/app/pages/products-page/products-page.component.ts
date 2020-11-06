@@ -15,7 +15,7 @@ export class ProductsPageComponent implements OnInit {
   public products: Product[];
   /** Quantidade total de produtos no carrinho. Somatório de da quantidade de cada produto. */
   cartQuantity = 0;
-  constructor(public router: Router, public productService: ProductService, public cartService: CartService) { }
+  constructor(public productService: ProductService, public cartService: CartService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -64,9 +64,5 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-  /** Navega para a tela do carrinho. */
-  navigateToCart() {
-    this.router.navigate(['cart']);
-  }
 
 }

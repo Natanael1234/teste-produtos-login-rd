@@ -1,0 +1,24 @@
+@import "../../../variables.scss";
+
+$menu-inner-width: 292px;
+.login-form-wrapper {
+  width: $menu-inner-width;
+  .login-form {
+    width: 100%;
+    // campo email
+    input {
+      min-width: $menu-inner-width;
+      height: 60px;
+      &::placeholder {
+        color: $primary-color;
+        font-size: 22px;
+        font-weight: lighter;
+      }
+    }
+    button {
+      min-width: $menu-inner-width;
+      font-size: 18px;
+      font-weight: lighter;
+    }
+  }
+}

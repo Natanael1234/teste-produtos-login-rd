@@ -1,0 +1,30 @@
+<div class="cart-item">
+  <!-- imagem do produto -->
+  <img class="image" [src]="item?.image || false" />
+  <div class="dados">
+    <div class="text">
+      <!-- nome do produto -->
+      <div class="name">{{ item?.name }}</div>
+      <!-- tags do produto -->
+      <div class="tags">{{ item?.tags }}</div>
+    </div>
+    <div class="quantidade-preco">
+      <div class="grupo-quantidade">
+        <!-- botão remover -->
+        <button
+          class="remove btn btn-light btn-outline-secondary"
+          [disabled]="!item"
+          (click)="fireOnAddProductEvent(item, -1)">-</button>
+        <!-- // quantidade -->
+        <div class="quantidade">{{ item?.cartQuantity }}</div>
+        <!-- botão adicionar -->
+        <button
+          class="add btn btn-light btn-outline-secondary"
+          [disabled]="!item"
+          (click)="fireOnAddProductEvent(item, 1)">+</button>
+      </div>
+      <!-- total -->
+      <div class="total">$ {{ item?.totalPrice }}</div>
+    </div>
+  </div>
+</div>

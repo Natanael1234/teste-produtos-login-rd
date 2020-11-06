@@ -1,44 +1,19 @@
 <!-- header -->
-<div class="header">
-  <div class="header-content">
-    <div class="title">Products</div>
-    <button type="button" class="btn btn-light cart" (click)="navigateToCart()">
-      <img class="icon" src="../../../assets/images/app/cart-icon.svg" />
-      {{ cartQuantity }}
-    </button>
-
-  </div>
-</div>
+<app-page-header
+  class="page-header"
+  pageName="Products"
+  [showCart]="true"
+  [cartQuantity]="cartQuantity">
+</app-page-header>
 
 <!-- grid -->
 <div *ngIf="products" class="products">
   <!-- grid item -->
-  <div
+  <app-product-card
     *ngFor="let product of products"
-    [ngClass]="['product', product.cartQuantity ? 'in-cart' : '']"
+    [product]="product"
+    (onAddToChart)="addToCart(product)"
+    (onRemoveFromChart)="removeFromCart(product)"
   >
-    <div class="text">
-      <div class="name">
-        {{ product.name }}
-      </div>
-      <div class="tags">
-        {{ product.tags }}
-      </div>
-    </div>
-    <div class="price">${{ product.price }}</div>
-    <img [src]="product.image" class="image" />
-    <button
-      type="button"
-      [ngClass]="[
-        'btn',
-        product.cartQuantity ? 'btn-danger' : 'btn-primary',
-        'button'
-      ]"
-      (click)="
-        !product.cartQuantity ? addToCart(product) : removeFromCart(product)
-      "
-    >
-      {{ !product.cartQuantity ? "Add to cart" : "Remove from cart" }}
-    </button>
-  </div>
+  </app-product-card>
 </div>

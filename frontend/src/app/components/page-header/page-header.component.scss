@@ -1,0 +1,39 @@
+@import "../../../variables.scss";
+
+// cabeçalho
+.header {
+  display: grid;
+  margin-bottom: 70px;
+  width: 100%;
+  color: $gray-dark;
+  .header-content {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: auto auto;
+    }
+    .title {
+      font-size: 69px;
+      font-weight: lighter;
+      align-self: center;
+    }
+    .cart {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      align-self: center;
+      color: $primary-color;
+      font-size: 22px;
+      font-weight: bolder;
+      justify-self: left;
+      @media (min-width: $breakpoint-lg) {
+        justify-self: end;
+      }
+      align-self: center;
+      .icon {
+        margin-right: 25px;
+      }
+    }
+  }
+}
