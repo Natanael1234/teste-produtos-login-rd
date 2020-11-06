@@ -1,11 +1,7 @@
 # teste-produtos-login-rd
-Frontend em Angular 10 com login, produtos e carrinho
 
-## Para executar a aplicação é necessário ter o Angular CLI instalado na máquina
+Frontend em Angular 10 com login, produtos e carrinho.
 
-## Para executar a aplicação com o servidor de desenvolvimento na máquina local 
-
-Abra um terminal de linha de comando na pasta frontend.
 
 # Testando o Build
 
