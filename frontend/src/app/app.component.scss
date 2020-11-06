@@ -9,163 +9,86 @@
  content: h 2049px top 1080px
  footer = h 165px
 */
+.app-container {
+ zoom: .75;
 
-// formulário do menu de login
-.login-popover {
-  $menu-width: 352px;
-  $menu-inner-width: 292px;
-  min-width: $menu-width;
-  .popover-body {
-    width: $menu-inner-width;
-    padding-top: 34px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 31px;
-  }
-  .login-form-wrapper {
-    width: $menu-inner-width;
-    .login-form {
-      width: 100%;
-      // campo email
-      input {
-        min-width: $menu-inner-width;
-        // width: 293px;
-        height: 60px;
-        &::placeholder {
-          color: $primary-color;
-          font-size: 22px;
-          font-weight: lighter;
+  .top-content-container {
+    .top-content {
+
+      min-height: calc(100vh - 165px);
+      // topo da página
+      .top {
+        position: relative;
+        .header {
+          margin-top: 22px;
+          margin-bottom: 46px;
+          height: 101px;
+          width: 100%;
         }
-      }
-      button {
-        min-width: $menu-inner-width;
-        font-size: 18px;
-        font-weight: lighter;
+        display: grid;
+        justify-content: stretch;
+        /** altura total do topo = 22px + 101px (cabeçacalho) + 911 (banner) + 46px = 1080px */
+
+        .banner {
+          margin-bottom: 45px;
+        }
       }
     }
   }
-}
-
-.page-container {
-  // topo da página
-  .top {
+  .footer-container {
     display: grid;
-    justify-content: center;
-    width: 100%;
-    /** altura total do topo = 22px + 101px (cabeçacalho) + 911 (banner) + 46px = 1080px */
-    // cabeçalho
-    .header {
-      color: $primary-color;
-      height: 101px;
-      font-weight: bold;
-      width: 100%;
-      margin-right: 48px;
-      margin-top: 22px;
-      margin-bottom: 46px;
-
-      display: grid;
-      align-items: center;
-      width: 417px;
-      // width: 100%;
-      grid-template-columns: auto 48px 118px;
-      .nome-pagina,
-      .nome-usuario {
-        display: none;
-      }
-      @media (min-width: $breakpoint-lg) {
-        width: 811px;
-      }
-      @media (min-width: $breakpoint-xl) {
-        grid-template-columns: 244px auto 48px auto 118px;
-        .nome-pagina,
-        .nome-usuario {
-          display: initial;
-        }
-        width: 1205px;
-      }
-      @media (min-width: $breakpoint-ul) {
-        width: 1599px;
-      }
-      // logo da empresa
-      .logo {
-        // background-color: rebeccapurple;
-        height: 101px;
-      }
-      // nome da página
-      .nome-pagina {
-        font-size: 22px;
-        font-weight: bold;
-      }
-      // nome do usuário
-      .nome-usuario {
-        font-size: 18px;
-        font-weight: normal;
-        justify-self: end;
-
-        margin-right: 74px;
-        justify-content: end;
-      }
-      // login
-      .login,
-      .logoff {
-        justify-self: end;
-        justify-content: end;
-        button {
-          font-size: 22px;
-          width: 118px;
-          height: 60px;
-        }
-      }
-    }
-  }
-
-  // conteúdo/páginas
-  .content {
-    width: 100%;
-  }
-
-  // rodapé
-  .footer {
-    // autura total do rodapé = 165px
+    align-items: center;
+    grid-template-columns: 1fr;
+    background-color: $secondary-color;
     width: 100%;
     height: 165px;
-    background-color: $secondary-color;
-    display: grid;
-    grid-template-columns: auto;
-    // logo da empresa
-    .logo-container {
-      display: grid;
-      .logo {
-        justify-self: center;
-        width: 244px;
-        height: 101px;
-      }
+    .footer {
+      width: 100%;
     }
-    // nome da aplicação
-    .text {
-      font-size: 23px;
-      color: $primary-color;
-      white-space: nowrap;
-      font-weight: lighter;
-      text-align: center;
-      display: none;
-    }
-
-    // se tela grande
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: auto auto;
-      // logo da empresa
-      .logo-container {
-        display: initial;
-        padding-left: 135px;
-      }
-      // logo da empresa
-      .text {
-        display: initial;
-        text-align: right;
-        padding-right: 183px;
-      }
-    }
-    align-items: center;
   }
+
+  .banner {
+    width: 100%;
+    height: 300px;
+  }
+  .top-content-container, .footer-container .footer {
+    $width: 370px;
+    width: $width;
+    margin-left: calc((100% - 340px) / 2);
+    grid-template-columns: auto;
+  }
+  @media (min-width: $breakpoint-md) {
+    .banner {
+      height: 500px;
+      width: 100%;
+    }
+    .top-content-container, .footer-container .footer {
+      width: 800px;
+      margin-left: calc((100% - 800px) / 2);
+      grid-template-columns: auto;
+    }
+  }
+  @media (min-width: $breakpoint-lg) {
+    .banner {
+      width: 100%;
+      height: 600px;
+    }
+    .top-content-container, .footer-container .footer {
+      width: 1157px;
+      margin-left: calc((100% - 1157px) / 2);
+      grid-template-columns: auto;
+    }
+  }
+  @media (min-width: $breakpoint-xl) {
+    .banner {
+      width: 100%;
+      height: 911px;
+    }
+    .top-content-container, .footer-container .footer {
+      width: 1551px;
+      margin-left: calc((100% - 1551px) / 2);
+      grid-template-columns: auto;
+    }
+  }
+
 }

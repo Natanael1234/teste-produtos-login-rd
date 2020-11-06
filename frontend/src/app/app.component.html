@@ -1,104 +1,23 @@
-<div class="page-container">
-  <!-- topo -->
-  <div class="top">
-    <!-- cabeçalho -->
-    <div class="header">
-      <!-- logo -->
-      <div class="logo" (click)="navigateToHome()">
-        <img class="logo" src="../assets/images/app/logo.png" />
+<div class="app-container">
+  <!-- topo + conteúdo -->
+  <div class="top-content-container">
+    <div class="top-content">
+      <!-- topo -->
+      <div class="top">
+        <!-- cabeçalho -->
+        <app-header class="header"></app-header>
+        <!-- banner -->
+        <app-banner class="banner"></app-banner>
       </div>
-      <!-- nome da página -->
-      <div class="nome-pagina">
-        {{ currentRoute }}
-      </div>
-      <div class="spacer"></div>
-      <!-- nome do usuário -->
-      <div class="nome-usuario">
-        {{ loginData?.name  ? 'Welcome ' + loginData.name : ''}}
-      </div>
-      <!-- botão login/logoff -->
-      <div class="login">
-        <!-- botão logout -->
-        <button
-          *ngIf="loginData"
-          type="button"
-          [ngClass]="['btn btn-danger']"
-          (click)="logout()" >Logout</button>
-        <!-- botão login -->
-        <button
-          *ngIf="!loginData"
-          type="button"
-          [ngClass]="['btn btn-primary']"
-          [autoClose]="'outside'"
-          [ngbPopover]="popContent"
-          popoverClass="login-popover" placement="auto"
-          (shown)="resetLogin()"
-          [popoverTitle]="popHeader">Login</button>
-        <!-- menu de login -->
-        <ng-template #popHeader></ng-template>
-        <ng-template #popContent class="login-template">
-          <div class="login-form-wrapper">
 
-            <!-- formulário -->
-            <form
-              class="login-form"
-              [formGroup]="loginForm"
-              (submit)="login($event)">
-              <!-- email -->
-              <div class="form-group">
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  [ngClass]="[
-                    'form-control',
-                    loginError || this.loginForm.controls.email.invalid && this.loginForm.controls.password.touched   ? 'is-invalid ' : ''
-                  ]"
-                  id="email"
-                  formControlName="email"
-                  required/>
-              </div>
-              <!-- senha -->
-              <div class="form-group" >
-                <input
-                  type="password"
-                  placeholder="Password"
-                  [ngClass]="[
-                    'form-control',
-                    loginError || this.loginForm.controls.password.invalid && this.loginForm.controls.password.touched ? 'is-invalid ' : ''
-                  ]"
-                  id="password"
-                  formControlName="password"
-                  required/>
-              </div>
-              <!-- botão login -->
-              <button
-                type="submit"
-                class="btn btn-primary"
-                [disabled]="!this.loginForm.controls.email.valid || !this.loginForm.controls.password.valid">LOGIN</button>
-            </form>
-
-
-          </div>
-        </ng-template>
+      <!-- conteúto/páginas -->
+      <div class="content">
+        <router-outlet></router-outlet>
       </div>
     </div>
-    <!-- banner -->
-    <div class="banner"></div>
-  </div>
-
-  <!-- conteúto/páginas -->
-  <div class="content">
-    <router-outlet></router-outlet>
   </div>
   <!-- rodapé -->
-  <div class="footer">
-    <!-- logo -->
-    <div class="logo-container">
-      <img class="logo" src="../assets/images/app/logo.png" />
-    </div>
-    <!-- nome app -->
-    <div class="text">
-      <div>Teste front-end 2019 - RCA Digital</div>
-    </div>
+  <div class="footer-container">
+    <app-footer class="footer"></app-footer>
   </div>
 </div>
