@@ -1,13 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 body {
-  margin: 0;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
 }
 
 
-
+// contêiner do formulário do menu de login
+.login-popover {
+  $menu-width: 352px;
+  $menu-inner-width: 292px;
+  min-width: $menu-width;
+  .popover-body {
+    width: $menu-inner-width;
+    padding-top: 34px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 31px;
+  }
+}
