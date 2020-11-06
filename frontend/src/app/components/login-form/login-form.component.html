@@ -14,7 +14,7 @@
           [ngClass]="[
             'form-control',
             (loginError) ||
-            (this.form.controls.email.invalid && this.form.controls.password.touched ? 'is-invalid ' : '')
+            (this.form.controls.email.invalid && this.form.controls.password.touched) ? 'is-invalid ' : ''
           ]"
           id="email"
           formControlName="email"
@@ -37,8 +37,7 @@
       <!-- botão login -->
       <button
         type="submit"
-        class="btn btn-primary"
-        [disabled]="!this.form.controls.email.valid || !this.form.controls.password.valid">LOGIN</button>
+        class="btn btn-primary">LOGIN</button>
     </form>
 
 

@@ -34,7 +34,7 @@
     <!-- menu de login -->
     <ng-template #popHeader></ng-template>
     <ng-template #popContent class="login-template">
-      <login-form (onSubmit)="login($event)"></login-form>
+      <login-form (onSubmit)="login($event)" [loginError]="loginError"></login-form>
     </ng-template>
   </div>
 </div>
