@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
+@import "./variables.scss";
+$primary: $primary-color;
+$danger: $danger-color;
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: normal;
+  font-family: "Open Sans", sans-serif!important;
+  font-weight: normal!important;
 }
 
 
